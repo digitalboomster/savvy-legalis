@@ -87,18 +87,6 @@ export type MockIngestJob = {
 
 export type MatterStatus = 'active' | 'advisory' | 'closed'
 
-export type MockMatter = {
-  id: string
-  ref: string
-  title: string
-  court: string
-  jurisdiction: string
-  status: MatterStatus
-  summary: string
-  updatedAt: string
-  docCount: number
-}
-
 export type MockResearchSource = {
   id: string
   citation: string
@@ -469,57 +457,6 @@ export const mockIngestJobs: MockIngestJob[] = [
     stage: 'Queued',
     progress: 5,
     startedAt: '2026-04-03T07:30:00.000Z',
-  },
-]
-
-export const mockMatters: MockMatter[] = [
-  {
-    id: 'm1',
-    ref: 'LAG-2024-112',
-    title: 'Lagos Port Authority — confidentiality & concession dispute',
-    court: 'Federal High Court',
-    jurisdiction: 'Lagos',
-    status: 'active',
-    summary:
-      'NDA scope, force majeure on berth delays, and injunctive relief against disclosure. Bundle indexed; expert reports under privilege review.',
-    updatedAt: '2026-04-02',
-    docCount: 38,
-  },
-  {
-    id: 'm2',
-    ref: 'ABJ-2025-044',
-    title: 'FCT land allocation — judicial review of agency decision',
-    court: 'Federal High Court',
-    jurisdiction: 'Abuja',
-    status: 'active',
-    summary:
-      'Administrative law challenge; witness statements in processing; research memos cite SCN hierarchy and LFN compilations.',
-    updatedAt: '2026-04-01',
-    docCount: 22,
-  },
-  {
-    id: 'm3',
-    ref: 'CORP-ADV-009',
-    title: 'CAMA restructuring — minority squeeze-out advisory',
-    court: '—',
-    jurisdiction: 'Nigeria (national)',
-    status: 'advisory',
-    summary:
-      'Board memos, CAMA 2020 excerpts indexed; playbook checks on notices and fair value mechanics.',
-    updatedAt: '2026-03-29',
-    docCount: 14,
-  },
-  {
-    id: 'm4',
-    ref: 'PHC-2026-008',
-    title: 'Rivers HSE — contractor liability & indemnities',
-    court: 'High Court',
-    jurisdiction: 'Port Harcourt',
-    status: 'active',
-    summary:
-      'Construction defect claim; tabular review on indemnity clauses across sub-contracts; Sharia/customary not engaged.',
-    updatedAt: '2026-03-27',
-    docCount: 19,
   },
 ]
 
