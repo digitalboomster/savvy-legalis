@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NaijaLex - Support &amp; Help Center</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#012114",
+                        "surface": "#f5fbf3",
+                        "on-secondary-container": "#785d00",
+                        "on-surface-variant": "#3e4a41",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#c7ebd6",
+                        "surface-dim": "#d6dcd4",
+                        "secondary-container": "#fed977",
+                        "outline": "#6e7a70",
+                        "surface-tint": "#006d40",
+                        "background": "#f5fbf3",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f0f5ee",
+                        "on-primary-fixed-variant": "#00522f",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#fefffb",
+                        "surface-container": "#eaefe8",
+                        "inverse-primary": "#70db9d",
+                        "primary": "#006b3f",
+                        "on-primary-container": "#fdfff9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#171d19",
+                        "surface-container-high": "#e4eae2",
+                        "inverse-on-surface": "#edf2eb",
+                        "primary-fixed-dim": "#70db9d",
+                        "outline-variant": "#bdcabe",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e6c364",
+                        "surface-variant": "#dee4dd",
+                        "secondary-fixed": "#ffe08f",
+                        "secondary": "#755b00",
+                        "primary-fixed": "#8df8b7",
+                        "surface-container-highest": "#dee4dd",
+                        "tertiary": "#446454",
+                        "on-secondary-fixed-variant": "#584400",
+                        "tertiary-fixed-dim": "#accebb",
+                        "surface-bright": "#f5fbf3",
+                        "on-tertiary-fixed-variant": "#2e4d3e",
+                        "on-surface": "#171d19",
+                        "inverse-surface": "#2c322d",
+                        "primary-container": "#008751",
+                        "tertiary-container": "#5d7d6c",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002110",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Work Sans", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"],
+                        "serif-brand": ["Instrument Serif", "serif"],
+                        "sans-brand": ["DM Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: "Work Sans", system-ui, sans-serif; }
+        .font-headline { font-family: "Newsreader", serif; }
+        .font-label { font-family: "Public Sans", sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container pb-24 md:pb-0">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f0f5ee] dark:bg-neutral-900 flex flex-col p-4 overflow-y-auto border-r-0 z-50">
+<div class="mb-10 px-4">
+<h1 class="font-serif-brand text-2xl italic text-[#006b3f] dark:text-[#008751]">NaijaLex</h1>
+<p class="font-sans-brand text-xs tracking-widest uppercase text-outline opacity-70 mt-1">The Digital Jurist</p>
+</div>
+<nav class="flex-1 space-y-2 min-h-0">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="dashboard.html">
+<span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="matters.html">
+<span class="material-symbols-outlined" aria-hidden="true">gavel</span>
+                Matters
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="research.html">
+<span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+                Research
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="review.html">
+<span class="material-symbols-outlined" aria-hidden="true">rate_review</span>
+                Review
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="draft.html">
+<span class="material-symbols-outlined" aria-hidden="true">edit_document</span>
+                Draft
+            </a>
+</nav>
+<div class="mt-auto space-y-2 border-t border-outline-variant/20 dark:border-white/10 pt-4">
+<button type="button" class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-sans-brand font-bold text-sm shadow-lg shadow-primary/20 mb-2 flex items-center justify-center gap-2 transition-transform active:scale-[0.98] hover:opacity-95">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">add</span>
+                File New Motion
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 font-sans-brand text-sm tracking-tight rounded-lg" href="settings.html">
+<span class="material-symbols-outlined" aria-hidden="true">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#006b3f] dark:text-[#008751] bg-white/50 dark:bg-white/10 backdrop-blur-xl rounded-lg shadow-sm font-bold font-sans-brand text-sm tracking-tight border border-outline-variant/10" href="support.html" aria-current="page">
+<span class="material-symbols-outlined" aria-hidden="true">help_center</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- Main -->
+<main class="ml-64 min-h-screen max-w-[calc(100vw-16rem)]">
+<header class="sticky top-0 z-40 min-h-20 py-3 bg-[#f5fbf3]/80 dark:bg-neutral-950/80 backdrop-blur-md flex flex-wrap gap-4 justify-between items-center px-6 lg:px-8">
+<div class="flex flex-wrap items-center gap-4 lg:gap-8 min-w-0">
+<h2 class="font-serif-brand text-2xl sm:text-3xl text-[#171d19] dark:text-white shrink-0">Support</h2>
+<div class="hidden md:flex gap-4 lg:gap-6 text-sm font-label uppercase tracking-widest text-neutral-500">
+<a class="hover:text-primary transition-colors" href="#">Supreme Court</a>
+<a class="hover:text-primary transition-colors" href="#">Court of Appeal</a>
+<a class="hover:text-primary transition-colors" href="#">High Court</a>
+</div>
+</div>
+<div class="flex items-center gap-4 lg:gap-6 shrink-0">
+<div class="flex items-center gap-2 lg:gap-4 text-neutral-500">
+<button type="button" class="p-2 rounded-lg hover:text-primary transition-colors" aria-label="Notifications"><span class="material-symbols-outlined" aria-hidden="true">notifications</span></button>
+<button type="button" class="p-2 rounded-lg hover:text-primary transition-colors" aria-label="History"><span class="material-symbols-outlined" aria-hidden="true">history</span></button>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-highest border border-outline-variant/30 overflow-hidden shrink-0 ring-2 ring-white">
+<img alt="Advocate Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ9BcZPdAiC6ZpCmsmQZrONl8CJoItg9lhxPmZ20u8q9PGJFjYPj9akI_w_B1izVb1TX0VoZDis2roXGyuznqBw3cclB0FCBh0xC5lRpxPafSjKS2QKXW7C8k_vinJPjaEz6UO2X6N_3AbWlB58dz8dM_T4Vk-kLEj5u0zZxPGIA8kKwzeCb9tYg6mAGJ2rbNMOjBNxLL7O3qXTW-ErtTaACLjb-UDskI3aBjO2lXktAp82IeNKh71ED9MrFMKnd25xb7WYH1Kz0E"/>
+</div>
+</div>
+</header>
+<section class="p-6 sm:p-8 max-w-7xl mx-auto">
+<!-- Hero -->
+<div class="relative rounded-[2rem] overflow-hidden bg-primary-container p-8 sm:p-12 mb-10 sm:mb-12 shadow-2xl shadow-primary/10">
+<div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" aria-hidden="true">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr8WxT52fXaSAhTB2x6NWIxICcGlDpjErzHzunBYKzmV2mizHhpiZ5evRWEdDNkZfl2IOGHbOI3clfHjHyrcxB6xZ7Jmk1NgR672_BXqUHwWO0-nMACCIXA6OteQW5g-A0R_PeKtkkgNJzBAmEWaFDFAygoAHBPL9IpzJsE1pC2IzHS3C9sr8K240-lk86spcA03pUiCGP1KKRXw5pJf3BMLnxW9_eZnqw9YPnN-Rep75F6eg8DxoTcrHlGoTPfMOgZElAw-nv2OE"/>
+</div>
+<div class="relative z-10 text-center max-w-3xl mx-auto">
+<h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">How can we assist your practice today?</h1>
+<div class="relative">
+<label class="sr-only" for="support-search">Search help</label>
+<span class="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-white/60 pointer-events-none" aria-hidden="true">search</span>
+<input id="support-search" class="w-full bg-white/10 backdrop-blur-md border-0 border-b-2 border-white/20 text-white placeholder:text-white/60 py-4 sm:py-5 pl-14 sm:pl-16 pr-6 rounded-2xl focus:outline-none focus:border-secondary-fixed transition-all font-body text-base sm:text-lg" placeholder="How to search Sharia precedents?" type="search"/>
+</div>
+<div class="flex flex-wrap justify-center gap-x-3 gap-y-2 mt-6">
+<span class="text-white/60 text-xs sm:text-sm font-label uppercase tracking-widest w-full sm:w-auto text-center sm:text-left">Trending:</span>
+<a class="text-secondary-fixed text-sm font-medium hover:underline" href="#">E-filing guidelines</a>
+<span class="text-white/30 hidden sm:inline" aria-hidden="true">·</span>
+<a class="text-secondary-fixed text-sm font-medium hover:underline" href="#">Subscription renewal</a>
+<span class="text-white/30 hidden sm:inline" aria-hidden="true">·</span>
+<a class="text-secondary-fixed text-sm font-medium hover:underline" href="#">Court hierarchy map</a>
+</div>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-12 gap-8 lg:gap-8 mb-10 lg:mb-12">
+<!-- Common Inquiries -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between gap-4 mb-2">
+<h3 class="font-headline text-2xl sm:text-3xl text-on-surface">Common Inquiries</h3>
+<a class="text-secondary font-label text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all shrink-0" href="#">VIEW ALL <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button type="button" class="group text-left bg-surface-container-lowest dark:bg-neutral-900/30 p-6 rounded-[1.5rem] transition-all hover:bg-surface-container hover:-translate-y-1 border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="bg-tertiary-fixed p-3 rounded-xl text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined" aria-hidden="true">settings_suggest</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-on-surface mb-1">Technical Support</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Troubleshoot login issues, platform latency, or mobile app synchronization.</p>
+</div>
+</div>
+</button>
+<button type="button" class="group text-left bg-surface-container-lowest dark:bg-neutral-900/30 p-6 rounded-[1.5rem] transition-all hover:bg-surface-container hover:-translate-y-1 border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="bg-secondary-fixed p-3 rounded-xl text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">payments</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-on-surface mb-1">Billing &amp; Invoices</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Manage your premium firm subscription, download VAT receipts, or update payment methods.</p>
+</div>
+</div>
+</button>
+<button type="button" class="group text-left bg-surface-container-lowest dark:bg-neutral-900/30 p-6 rounded-[1.5rem] transition-all hover:bg-surface-container hover:-translate-y-1 border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="bg-primary-fixed p-3 rounded-xl text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined" aria-hidden="true">library_books</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-on-surface mb-1">Legal Corpus Requests</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Request specific missing case files or gazettes from our archival digitization team.</p>
+</div>
+</div>
+</button>
+<button type="button" class="group text-left bg-surface-container-lowest dark:bg-neutral-900/30 p-6 rounded-[1.5rem] transition-all hover:bg-surface-container hover:-translate-y-1 border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-highest p-3 rounded-xl text-on-surface shrink-0">
+<span class="material-symbols-outlined" aria-hidden="true">security</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold text-on-surface mb-1">Privacy &amp; Compliance</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Understand how we encrypt privileged client-attorney data and Nigerian data laws.</p>
+</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Advocate Support -->
+<div class="col-span-12 lg:col-span-4">
+<div class="lg:sticky lg:top-28 bg-surface-container-low dark:bg-neutral-900/20 rounded-[2rem] p-6 sm:p-8 h-fit border border-outline-variant/10">
+<div class="mb-6 sm:mb-8">
+<h3 class="font-headline text-2xl sm:text-3xl mb-2 text-on-surface">Advocate Support</h3>
+<p class="text-sm text-on-surface-variant">Speak directly with our legal technology specialists for high-priority matters.</p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="text-[0.6875rem] font-bold font-label uppercase tracking-widest text-outline mb-2 block" for="ticket-subject">Matter Subject</label>
+<select id="ticket-subject" class="w-full bg-surface dark:bg-neutral-950/50 border-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-colors py-3 px-0 rounded-none text-on-surface">
+<option>System Access Issue</option>
+<option>Data Correction Request</option>
+<option>Feature Enhancement</option>
+<option>General Inquiry</option>
+</select>
+</div>
+<div>
+<label class="text-[0.6875rem] font-bold font-label uppercase tracking-widest text-outline mb-2 block" for="ticket-message">Your Message</label>
+<textarea id="ticket-message" class="w-full bg-surface dark:bg-neutral-950/50 border-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-colors py-3 px-0 resize-none rounded-none text-on-surface" placeholder="Describe the issue with case citations if necessary..." rows="4"></textarea>
+</div>
+<button type="button" class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-4 rounded-xl font-bold mt-4 flex items-center justify-center gap-2 shadow-xl shadow-primary/20 hover:opacity-95 transition-opacity">
+<span class="material-symbols-outlined text-lg" aria-hidden="true">send</span>
+                                Submit Ticket
+                            </button>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/30">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-secondary shrink-0" aria-hidden="true">schedule</span>
+<span>Typical response: &lt; 2 hours</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary shrink-0" aria-hidden="true">call</span>
+<span>Priority Hotline: +234 (0) 800-LEX-HELP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Jurisdictions -->
+<div class="bg-surface-container-highest/30 dark:bg-white/5 rounded-[2rem] p-6 sm:p-10 border border-outline-variant/10">
+<h3 class="font-headline text-xl sm:text-2xl mb-6 sm:mb-8 text-on-surface">Resource Jurisdictions</h3>
+<div class="flex flex-wrap gap-3 sm:gap-4">
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">Supreme Court</span>
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">Court of Appeal</span>
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">High Court</span>
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">Common Law</span>
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">Sharia Law</span>
+<span class="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[0.6875rem] font-bold font-label uppercase tracking-widest">Customary Law</span>
+</div>
+</div>
+</section>
+<footer class="mt-12 sm:mt-20 p-6 sm:p-8 border-t border-outline-variant/10 flex flex-col sm:flex-row flex-wrap gap-6 justify-between items-start sm:items-center text-on-surface-variant text-xs">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+<span>© 2024 NaijaLex Systems Limited</span>
+<a class="hover:text-primary transition-colors" href="#">System Status: <span class="text-primary font-bold">Operational</span></a>
+</div>
+<div class="flex flex-wrap items-center gap-4 sm:gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">User Handbook</a>
+</div>
+</footer>
+</main>
+<!-- Live Chat FAB — mustard / gold -->
+<button type="button" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 h-14 w-14 sm:h-16 sm:w-16 bg-secondary-fixed text-on-secondary-fixed rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-transform z-40 ring-4 ring-background/90" aria-label="Open live chat">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1, 'wght' 400;" aria-hidden="true">chat_bubble</span>
+<span class="hidden sm:block absolute right-full mr-4 bg-on-surface text-surface text-[10px] py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap uppercase tracking-widest font-bold pointer-events-none">Live Chat</span>
+</button>
+</body>
+</html>

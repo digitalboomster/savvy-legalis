@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NaijaLex AI Draft Assist</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002110",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f5fbf3",
+                    "surface-tint": "#006d40",
+                    "on-secondary-container": "#785d00",
+                    "surface-dim": "#d6dcd4",
+                    "secondary": "#755b00",
+                    "primary": "#006b3f",
+                    "background": "#f5fbf3",
+                    "on-tertiary-container": "#fefffb",
+                    "on-background": "#171d19",
+                    "secondary-fixed": "#ffe08f",
+                    "inverse-surface": "#2c322d",
+                    "outline-variant": "#bdcabe",
+                    "primary-container": "#008751",
+                    "surface-container-high": "#e4eae2",
+                    "inverse-on-surface": "#edf2eb",
+                    "surface-container": "#eaefe8",
+                    "on-primary-container": "#fdfff9",
+                    "on-tertiary-fixed-variant": "#2e4d3e",
+                    "on-surface": "#171d19",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-fixed": "#012114",
+                    "tertiary": "#446454",
+                    "secondary-container": "#fed977",
+                    "inverse-primary": "#70db9d",
+                    "surface-container-low": "#f0f5ee",
+                    "secondary-fixed-dim": "#e6c364",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-primary": "#ffffff",
+                    "outline": "#6e7a70",
+                    "primary-fixed": "#8df8b7",
+                    "on-primary-fixed-variant": "#00522f",
+                    "primary-fixed-dim": "#70db9d",
+                    "tertiary-fixed-dim": "#accebb",
+                    "surface-container-highest": "#dee4dd",
+                    "surface": "#f5fbf3",
+                    "tertiary-container": "#5d7d6c",
+                    "on-surface-variant": "#3e4a41",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#c7ebd6",
+                    "surface-variant": "#dee4dd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Instrument Serif", "serif"],
+                    "body": ["DM Sans", "sans-serif"],
+                    "label": ["DM Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: "DM Sans", system-ui, sans-serif; }
+        .font-headline { font-family: "Instrument Serif", serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(245, 251, 243, 0.7);
+            backdrop-filter: blur(24px);
+        }
+        .carved-inset {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body overflow-hidden h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-[#f0f5ee] dark:bg-neutral-900 flex flex-col p-4 overflow-y-auto border-r-0">
+<div class="mb-8 px-2">
+<h1 class="font-['Instrument_Serif'] text-2xl italic text-[#006b3f] dark:text-[#008751]">NaijaLex</h1>
+<p class="text-xs text-neutral-500 tracking-wider font-label uppercase mt-1">The Digital Jurist</p>
+</div>
+<nav class="flex-1 space-y-1 min-h-0">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="dashboard.html">
+<span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="matters.html">
+<span class="material-symbols-outlined" aria-hidden="true">gavel</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Matters</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="research.html">
+<span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Research</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="review.html">
+<span class="material-symbols-outlined" aria-hidden="true">rate_review</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Review</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#006b3f] dark:text-[#008751] bg-white dark:bg-white/10 backdrop-blur-xl rounded-lg shadow-sm font-bold carved-inset border border-outline-variant/10" href="draft.html" aria-current="page">
+<span class="material-symbols-outlined" aria-hidden="true">edit_document</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Draft</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 space-y-4 border-t border-black/5 dark:border-white/5">
+<button type="button" class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 font-bold text-sm shadow-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">add</span>
+            File New Motion
+        </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="settings.html">
+<span class="material-symbols-outlined" aria-hidden="true">settings</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200 rounded-lg" href="support.html">
+<span class="material-symbols-outlined" aria-hidden="true">help_center</span>
+<span class="font-['DM_Sans'] text-sm tracking-tight">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex flex-col h-screen overflow-hidden min-w-0">
+<!-- TopNavBar -->
+<header class="flex flex-wrap gap-4 justify-between items-center min-h-20 py-3 px-6 lg:px-8 bg-[#f5fbf3]/80 dark:bg-neutral-950/80 backdrop-blur-md sticky top-0 z-40 shrink-0">
+<div class="flex flex-wrap items-center gap-4 lg:gap-8 min-w-0">
+<h2 class="font-headline text-2xl text-[#171d19] dark:text-white shrink-0">Draft Assist</h2>
+<div class="flex flex-wrap gap-4 lg:gap-6" role="tablist" aria-label="Draft context">
+<button type="button" role="tab" aria-selected="true" class="text-primary font-label text-sm font-bold border-b-2 border-secondary-fixed-dim pb-1">Nigeria Supreme Court</button>
+<button type="button" role="tab" aria-selected="false" class="text-neutral-500 hover:text-[#008751] transition-colors font-label text-sm">Templates Library</button>
+</div>
+</div>
+<div class="flex items-center gap-4 lg:gap-6 shrink-0">
+<div class="flex items-center gap-2 lg:gap-4">
+<button type="button" class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary p-1 rounded-lg transition-colors" aria-label="Notifications">notifications</button>
+<button type="button" class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary p-1 rounded-lg transition-colors" aria-label="History">history</button>
+</div>
+<button type="button" class="bg-surface-container-highest text-on-surface px-4 lg:px-6 py-2 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-surface-dim transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">description</span>
+                    Export to Word
+                </button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed border-2 border-white shadow-sm shrink-0">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo_wboBByTb8btEgZWCjyh3Pfi0-adAM3UTpi6gQzz01xULrAcUpuDOrfq6YifSnFpCesKOdZhJZMy-uNjch3IG9Aef-qSSXyf50HVouOtYSiKjbVyRumwldJy_sVkq05eV192xQp3gS4EL8prTl2Gp_fgOGFvrrgPLOxv7CWIizF3oME-7jStjDBNuGdwO4YcAwbPSFiWvtrVD2N-K43q7Cd4feHX6YTqGKMKUae3sFNGU4N8LRyVlAld1SXZ7KV_C0xKiJjXbWA"/>
+</div>
+</div>
+</header>
+<!-- Editor Workplace -->
+<section class="flex flex-col xl:flex-row flex-1 overflow-hidden p-4 lg:p-6 gap-4 lg:gap-6 min-h-0">
+<!-- Left Panel: AI Drafting Chat -->
+<div class="flex flex-col bg-surface-container-low rounded-3xl overflow-hidden border border-black/5 dark:border-white/10 min-h-[320px] xl:min-h-0 xl:w-[32%] xl:max-w-md xl:shrink-0">
+<div class="p-5 lg:p-6 border-b border-black/5 dark:border-white/10 bg-white/40">
+<h3 class="font-headline text-lg text-on-surface">AI Drafting Assistant</h3>
+<p class="text-xs text-on-surface-variant font-label tracking-tight mt-0.5">Under CAMA 2020 Compliance</p>
+</div>
+<div class="flex-1 overflow-y-auto p-5 lg:p-6 space-y-6 no-scrollbar min-h-0">
+<div class="bg-primary/5 p-4 rounded-2xl rounded-tl-none mr-4 sm:mr-8">
+<p class="text-sm leading-relaxed text-on-surface">How can I assist your drafting today, Counsel? I am prepared with the latest CAMA 2020 guidelines.</p>
+</div>
+<div class="bg-white dark:bg-neutral-900 p-4 rounded-2xl rounded-tr-none ml-4 sm:ml-8 shadow-sm border border-outline-variant/15">
+<p class="text-sm leading-relaxed italic text-on-surface">Draft a Shareholders Agreement for a Nigerian startup with 3 founders under CAMA 2020.</p>
+</div>
+<div class="bg-primary/5 p-4 rounded-2xl rounded-tl-none mr-4 sm:mr-8">
+<p class="text-sm leading-relaxed text-on-surface mb-3">Processing... I've initialized a Shareholders Agreement structure. I've added specific clauses for:</p>
+<ul class="text-xs space-y-2 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary shrink-0" aria-hidden="true">check_circle</span> Vesting Schedule (4 years)</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary shrink-0" aria-hidden="true">check_circle</span> Pre-emptive Rights</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary shrink-0" aria-hidden="true">check_circle</span> Board Composition (Sec 275 CAMA)</li>
+</ul>
+</div>
+</div>
+<div class="p-5 lg:p-6 bg-white/60 dark:bg-neutral-900/40 border-t border-black/5 dark:border-white/10 shrink-0">
+<div class="relative">
+<label class="sr-only" for="draft-refine">Refine draft</label>
+<textarea id="draft-refine" class="w-full bg-surface-container-lowest dark:bg-neutral-950 border-0 border-b-2 border-outline-variant/30 focus:ring-0 focus:border-secondary transition-all rounded-t-xl p-4 pr-14 text-sm placeholder:text-on-surface-variant/50 text-on-surface" placeholder="Refine draft... e.g. 'Add a drag-along clause at 75%'" rows="3"></textarea>
+<button type="button" class="absolute bottom-4 right-4 bg-primary text-on-primary p-2 rounded-full hover:scale-105 transition-transform flex items-center justify-center shadow-md" aria-label="Send message">
+<span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Center: Document editor -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest dark:bg-neutral-950 rounded-3xl shadow-sm border border-black/5 dark:border-white/10 relative min-h-[400px] min-w-0">
+<!-- Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-black/5 dark:border-white/10 bg-surface-bright/50 dark:bg-neutral-900/50 shrink-0">
+<div class="flex items-center gap-1 sm:gap-2">
+<button type="button" class="p-2 hover:bg-surface-container rounded-lg transition-colors" aria-label="Bold"><span class="material-symbols-outlined text-xl" aria-hidden="true">format_bold</span></button>
+<button type="button" class="p-2 hover:bg-surface-container rounded-lg transition-colors" aria-label="Italic"><span class="material-symbols-outlined text-xl" aria-hidden="true">format_italic</span></button>
+<button type="button" class="p-2 hover:bg-surface-container rounded-lg transition-colors" aria-label="Underline"><span class="material-symbols-outlined text-xl" aria-hidden="true">format_underlined</span></button>
+<div class="h-6 w-px bg-outline-variant/30 mx-1 sm:mx-2" aria-hidden="true"></div>
+<button type="button" class="p-2 hover:bg-surface-container rounded-lg transition-colors" aria-label="Bulleted list"><span class="material-symbols-outlined text-xl" aria-hidden="true">format_list_bulleted</span></button>
+<button type="button" class="p-2 hover:bg-surface-container rounded-lg transition-colors" aria-label="Align left"><span class="material-symbols-outlined text-xl" aria-hidden="true">format_align_left</span></button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest bg-secondary-fixed/25 text-secondary px-2 py-1 rounded">Autosaved</span>
+<button type="button" class="text-sm font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">history_edu</span>
+                            Version History
+                        </button>
+</div>
+</div>
+<!-- Rich text canvas -->
+<div class="flex-1 p-6 sm:p-10 lg:p-12 overflow-y-auto no-scrollbar font-body min-h-0">
+<div class="max-w-3xl mx-auto space-y-8 text-on-surface">
+<h1 class="text-2xl sm:text-3xl font-headline text-center mb-8 sm:mb-12">SHAREHOLDERS AGREEMENT</h1>
+<p class="text-sm leading-relaxed">THIS SHAREHOLDERS AGREEMENT (the &quot;Agreement&quot;) is made this [Day] of [Month], [Year], between [Founder Name 1], [Founder Name 2], and [Founder Name 3] (collectively the &quot;Founders&quot;) and [Company Name] Ltd (the &quot;Company&quot;).</p>
+<section class="space-y-4">
+<h2 class="font-headline text-xl text-primary border-b border-primary/10 pb-2">1. DEFINITIONS AND INTERPRETATIONS</h2>
+<p class="text-sm leading-relaxed">&quot;CAMA&quot; means the Companies and Allied Matters Act 2020 as amended from time to time. All corporate governance measures herein are intended to comply with the statutory requirements for private limited companies in Nigeria.</p>
+</section>
+<section class="space-y-4">
+<h2 class="font-headline text-xl text-primary border-b border-primary/10 pb-2">2. BOARD COMPOSITION</h2>
+<p class="text-sm leading-relaxed">The Board shall initially consist of [Number] directors. In accordance with Section 275 of CAMA, the company shall maintain a minimum of two directors at all times.</p>
+</section>
+<section class="space-y-4">
+<h2 class="font-headline text-xl text-primary border-b border-primary/10 pb-2">3. VESTING AND RE-PURCHASE</h2>
+<p class="text-sm leading-relaxed">Shares issued to the Founders shall be subject to a four (4) year vesting schedule with a one (1) year cliff. In the event of a Founder&apos;s departure, the Company retains the right to repurchase unvested shares at par value...</p>
+</section>
+</div>
+</div>
+</div>
+<!-- Playbook Sidebar -->
+<div class="flex flex-col gap-4 lg:gap-6 xl:w-72 shrink-0 xl:max-h-full min-h-0">
+<!-- Compliance Check Card -->
+<div class="bg-surface-container rounded-3xl p-5 lg:p-6 shadow-sm border border-black/5 dark:border-white/10">
+<h3 class="font-label font-bold text-xs uppercase tracking-widest mb-4 flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm text-primary" aria-hidden="true">verified_user</span>
+                        Legal Playbook
+                    </h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-white/50 dark:bg-neutral-900/30 rounded-xl gap-2">
+<span class="text-xs font-bold text-on-surface">Governing Law</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full flex items-center gap-1 font-bold shrink-0">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">check_circle</span>
+                                OK
+                            </span>
+</div>
+<div class="flex items-center justify-between p-3 bg-white/50 dark:bg-neutral-900/30 rounded-xl gap-2">
+<span class="text-xs font-bold text-on-surface">Force Majeure</span>
+<span class="text-[10px] bg-secondary-fixed/50 text-on-secondary-fixed px-2 py-1 rounded-full flex items-center gap-1 font-bold shrink-0">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">warning</span>
+                                MISSING
+                            </span>
+</div>
+<div class="flex items-center justify-between p-3 bg-white/50 dark:bg-neutral-900/30 rounded-xl gap-2">
+<span class="text-xs font-bold text-on-surface">Tax Compliance</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full flex items-center gap-1 font-bold shrink-0">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">check_circle</span>
+                                OK
+                            </span>
+</div>
+</div>
+<button type="button" class="w-full mt-5 text-xs font-bold text-primary hover:text-primary-container transition-colors text-left">Run Full Audit →</button>
+</div>
+<!-- Template Picker -->
+<div class="flex-1 min-h-[200px] xl:min-h-0 bg-surface-container-high dark:bg-neutral-900/40 rounded-3xl p-5 lg:p-6 overflow-hidden flex flex-col border border-black/5 dark:border-white/10">
+<h3 class="font-label font-bold text-xs uppercase tracking-widest mb-4 text-on-surface">Quick Templates</h3>
+<div class="flex-1 space-y-2 overflow-y-auto no-scrollbar min-h-0">
+<button type="button" class="w-full text-left p-3 rounded-xl hover:bg-white/40 dark:hover:bg-white/5 transition-all group">
+<p class="text-xs font-bold group-hover:text-primary text-on-surface">Share Purchase (SPA)</p>
+<p class="text-[10px] text-on-surface-variant">Standard M&amp;A format</p>
+</button>
+<button type="button" class="w-full text-left p-3 rounded-xl hover:bg-white/40 dark:hover:bg-white/5 transition-all group">
+<p class="text-xs font-bold group-hover:text-primary text-on-surface">Originating Summons</p>
+<p class="text-[10px] text-on-surface-variant">Lagos High Court</p>
+</button>
+<button type="button" class="w-full text-left p-3 rounded-xl hover:bg-white/40 dark:hover:bg-white/5 transition-all group">
+<p class="text-xs font-bold group-hover:text-primary text-on-surface">Employment Offer</p>
+<p class="text-[10px] text-on-surface-variant">Labor Act Compliance</p>
+</button>
+<button type="button" class="w-full text-left p-3 rounded-xl hover:bg-white/40 dark:hover:bg-white/5 transition-all group">
+<p class="text-xs font-bold group-hover:text-primary text-on-surface">NDA (Mutual)</p>
+<p class="text-[10px] text-on-surface-variant">IP Protection clauses</p>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<div class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 z-30 pointer-events-none flex flex-col items-end gap-4">
+<button type="button" class="pointer-events-auto bg-gradient-to-br from-primary to-primary-container text-white p-4 lg:p-5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center ring-4 ring-background/80" aria-label="AI polish document">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1, 'wght' 400;" aria-hidden="true">auto_fix_high</span>
+</button>
+</div>
+</body>
+</html>

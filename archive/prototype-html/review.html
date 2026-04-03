@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NaijaLex | Tabular Review</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002110",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f5fbf3",
+                    "surface-tint": "#006d40",
+                    "on-secondary-container": "#785d00",
+                    "surface-dim": "#d6dcd4",
+                    "secondary": "#755b00",
+                    "primary": "#006b3f",
+                    "background": "#f5fbf3",
+                    "on-tertiary-container": "#fefffb",
+                    "on-background": "#171d19",
+                    "secondary-fixed": "#ffe08f",
+                    "inverse-surface": "#2c322d",
+                    "outline-variant": "#bdcabe",
+                    "primary-container": "#008751",
+                    "surface-container-high": "#e4eae2",
+                    "inverse-on-surface": "#edf2eb",
+                    "surface-container": "#eaefe8",
+                    "on-primary-container": "#fdfff9",
+                    "on-tertiary-fixed-variant": "#2e4d3e",
+                    "on-surface": "#171d19",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-fixed": "#012114",
+                    "tertiary": "#446454",
+                    "secondary-container": "#fed977",
+                    "inverse-primary": "#70db9d",
+                    "surface-container-low": "#f0f5ee",
+                    "secondary-fixed-dim": "#e6c364",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-primary": "#ffffff",
+                    "outline": "#6e7a70",
+                    "primary-fixed": "#8df8b7",
+                    "on-primary-fixed-variant": "#00522f",
+                    "primary-fixed-dim": "#70db9d",
+                    "tertiary-fixed-dim": "#accebb",
+                    "surface-container-highest": "#dee4dd",
+                    "surface": "#f5fbf3",
+                    "tertiary-container": "#5d7d6c",
+                    "on-surface-variant": "#3e4a41",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#c7ebd6",
+                    "surface-variant": "#dee4dd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Work Sans", "sans-serif"],
+                    "label": ["Public Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: "Work Sans", system-ui, sans-serif; }
+        .font-headline { font-family: "Newsreader", serif; }
+        .font-label { font-family: "Public Sans", sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-border-bottom {
+            border-bottom: 1px solid rgba(189, 202, 190, 0.15);
+        }
+        .glass-panel {
+            background: rgba(245, 251, 243, 0.8);
+            backdrop-filter: blur(32px);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+        }
+        @media (max-width: 1023px) {
+            .editorial-grid {
+                grid-template-columns: minmax(0, 1fr);
+                grid-template-rows: auto auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-[#f0f5ee] dark:bg-neutral-900 flex flex-col p-4 overflow-y-auto font-['DM_Sans'] text-sm tracking-tight border-r-0">
+<div class="mb-8 px-4">
+<h1 class="font-['Instrument_Serif'] text-2xl italic text-[#006b3f] dark:text-[#008751]">NaijaLex</h1>
+<p class="text-xs text-neutral-500 uppercase tracking-widest mt-1">The Digital Jurist</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200" href="dashboard.html">
+<span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200" href="matters.html">
+<span class="material-symbols-outlined" aria-hidden="true">gavel</span>
+<span>Matters</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200" href="research.html">
+<span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+<span>Research</span>
+</a>
+<!-- Active: Review — solid green, white label (mockup) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white bg-gradient-to-br from-[#006b3f] to-[#008751] shadow-md font-bold" href="review.html" aria-current="page">
+<span class="material-symbols-outlined text-white" aria-hidden="true">rate_review</span>
+<span>Review</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f] hover:bg-white/30 dark:hover:bg-neutral-800 transition-all duration-200" href="draft.html">
+<span class="material-symbols-outlined" aria-hidden="true">edit_document</span>
+<span>Draft</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4">
+<button type="button" class="w-full py-3 px-4 bg-gradient-to-br from-[#006b3f] to-[#008751] text-white rounded-xl font-bold shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">add</span>
+                File New Motion
+            </button>
+<div class="pt-4 border-t border-neutral-200 dark:border-neutral-800">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f]" href="settings.html">
+<span class="material-symbols-outlined" aria-hidden="true">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 dark:text-neutral-400 hover:text-[#006b3f]" href="support.html">
+<span class="material-symbols-outlined" aria-hidden="true">help_center</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden min-w-0">
+<!-- TopNavBar Shell -->
+<header class="flex flex-wrap gap-4 justify-between items-center min-h-20 py-3 px-8 sticky top-0 z-40 bg-[#f5fbf3]/80 dark:bg-neutral-950/80 backdrop-blur-md">
+<div class="flex flex-wrap items-center gap-6 lg:gap-8 min-w-0">
+<h2 class="font-['Instrument_Serif'] text-2xl text-[#171d19] dark:text-white shrink-0">Review Portal</h2>
+<div class="flex flex-wrap gap-4 lg:gap-6 text-sm">
+<a class="text-neutral-500 hover:text-[#008751] transition-colors" href="#">Supreme Court</a>
+<a class="text-neutral-500 hover:text-[#008751] transition-colors" href="#">Court of Appeal</a>
+<a class="text-primary font-semibold border-b-2 border-secondary-fixed-dim pb-1" href="#">Review Grid</a>
+</div>
+</div>
+<div class="flex items-center gap-4 lg:gap-6 shrink-0">
+<div class="flex gap-4">
+<button type="button" class="text-neutral-500 cursor-pointer hover:text-primary transition-colors p-1 rounded-lg" aria-label="Notifications">
+<span class="material-symbols-outlined" aria-hidden="true">notifications</span>
+</button>
+<button type="button" class="text-neutral-500 cursor-pointer hover:text-primary transition-colors p-1 rounded-lg" aria-label="History">
+<span class="material-symbols-outlined" aria-hidden="true">history</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/15">
+<img alt="Advocate Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5aG2XDi9sqEEksqm_nNrsxJhL_NY5-tcH1ZYNR9QK7uOywGcJGGtyBCwU8nta2Sxi_fm_8xeSzVxqoxJiQpCVen1xd4jMa291iwPO0UBAbHNG3DDLK_tPVMocOUSED4F-c6N6m32zQYaz_vttMkALF2zg0q-FqkPh-t9hDX2q7eTJL9_cICOW8LAPOpAwombOUUpdf8YZNO78kV0suFb0cV2jBg-DHLC0Bkc3CD83wMU7QzkwO8Xv-fzvIOli3j5-EHIXUKraCbY"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 editorial-grid overflow-hidden min-h-0">
+<!-- Grid Interface -->
+<section class="flex flex-col bg-surface-container-low p-6 overflow-hidden min-h-0 min-w-0">
+<div class="flex flex-wrap gap-4 justify-between items-start mb-6">
+<div class="min-w-0">
+<h3 class="font-headline text-3xl text-on-surface">Bulk Lease Extraction</h3>
+<p class="text-on-surface-variant font-body text-sm mt-1">Reviewing 12 Nigerian Lease Agreements via AI Analysis</p>
+</div>
+<button type="button" class="flex items-center gap-2 px-6 py-2.5 bg-surface-container-highest text-on-surface rounded-full text-sm font-bold hover:bg-surface-container-high transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">download</span>
+                        Download for Excel (.xlsx)
+                    </button>
+</div>
+<!-- Spreadsheet Layout -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl overflow-auto border border-outline-variant/10 shadow-[0_12px_40px_rgba(23,29,25,0.04)] min-h-0">
+<table class="w-full border-collapse text-left min-w-[640px]">
+<thead class="sticky top-0 bg-surface-container-lowest z-10">
+<tr class="ghost-border-bottom">
+<th class="p-4 bg-surface-container-low/50 font-label text-[10px] tracking-widest text-on-surface-variant uppercase w-12 text-center">#</th>
+<th class="p-4 bg-surface-container-low/50 font-label text-[10px] tracking-widest text-on-surface-variant uppercase border-l border-outline-variant/5">Document Name</th>
+<th class="p-4 bg-surface-container-low/50 font-label text-[10px] tracking-widest text-on-surface-variant uppercase border-l border-outline-variant/5">Tenant Name</th>
+<th class="p-4 bg-surface-container-low/50 font-label text-[10px] tracking-widest text-on-surface-variant uppercase border-l border-outline-variant/5">Monthly Rent (NGN)</th>
+<th class="p-4 bg-surface-container-low/50 font-label text-[10px] tracking-widest text-on-surface-variant uppercase border-l border-outline-variant/5">Term (Years)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5 font-body text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4 text-center text-on-surface-variant tabular-nums">01</td>
+<td class="p-4 font-semibold text-primary border-l border-outline-variant/5">Nigerian Lease Agreement 01</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="min-w-0">Alhaji Musa Danjuma</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">98%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="tabular-nums">₦ 450,000.00</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">94%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span>2 Years</span>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed text-[10px] rounded-full font-bold shrink-0">82%</span>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4 text-center text-on-surface-variant tabular-nums">02</td>
+<td class="p-4 font-semibold text-primary border-l border-outline-variant/5">Nigerian Lease Agreement 02</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="min-w-0">Mrs. Chioma Okonkwo</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">96%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="tabular-nums">₦ 1,200,000.00</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">97%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span>5 Years</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">91%</span>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4 text-center text-on-surface-variant tabular-nums">03</td>
+<td class="p-4 font-semibold text-primary border-l border-outline-variant/5">Nigerian Lease Agreement 03</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="min-w-0">Oluwaseun Property Ltd</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">95%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span class="tabular-nums">₦ 75,000.00</span>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed text-[10px] rounded-full font-bold shrink-0">88%</span>
+</div>
+</td>
+<td class="p-4 border-l border-outline-variant/5">
+<div class="flex items-center justify-between gap-2">
+<span>1 Year</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded-full font-bold shrink-0">96%</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Column Builder (Right Panel) -->
+<aside class="glass-panel border-l border-outline-variant/10 p-6 flex flex-col min-h-0 overflow-y-auto lg:max-h-none max-h-[50vh] lg:border-t-0 border-t">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;" aria-hidden="true">auto_awesome</span>
+<h4 class="font-headline text-xl text-on-surface">Column Builder</h4>
+</div>
+<div class="space-y-6 flex-1 min-h-0">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold block" for="col-key">New Column Key</label>
+<input id="col-key" class="w-full bg-surface-container-low ghost-border-bottom border-0 focus:ring-0 focus:border-secondary transition-all font-body text-sm py-3 px-0 rounded-none" placeholder="e.g. Penalty Clause" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold block" for="col-prompt">AI Extraction Prompt</label>
+<textarea id="col-prompt" class="w-full bg-surface-container-low ghost-border-bottom border-0 focus:ring-0 focus:border-secondary transition-all font-body text-sm py-3 px-0 resize-none rounded-none" placeholder="Extract the monthly rent amount in Naira..." rows="4"></textarea>
+</div>
+<div class="space-y-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold block">Data Type</span>
+<div class="flex flex-wrap gap-2" role="group" aria-label="Data type">
+<span class="px-3 py-1.5 bg-primary text-on-primary text-[10px] rounded-full font-bold cursor-default" aria-current="true">Currency</span>
+<button type="button" class="px-3 py-1.5 bg-surface-container-highest text-on-surface text-[10px] rounded-full font-bold cursor-pointer hover:bg-outline-variant/20 transition-colors">Boolean</button>
+<button type="button" class="px-3 py-1.5 bg-surface-container-highest text-on-surface text-[10px] rounded-full font-bold cursor-pointer hover:bg-outline-variant/20 transition-colors">Date</button>
+<button type="button" class="px-3 py-1.5 bg-surface-container-highest text-on-surface text-[10px] rounded-full font-bold cursor-pointer hover:bg-outline-variant/20 transition-colors">Entity</button>
+</div>
+</div>
+<button type="button" class="w-full py-3 bg-on-surface text-surface rounded-xl font-bold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" aria-hidden="true">add_column_left</span>
+                        Add Smart Column
+                    </button>
+</div>
+<div class="mt-8 p-4 bg-secondary-fixed/30 rounded-xl shrink-0">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-lg" aria-hidden="true">lightbulb</span>
+<span class="font-label text-[10px] uppercase font-bold text-on-secondary-fixed">System Suggestion</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        Detecting numerous mentions of <span class="font-bold text-secondary">"Security Deposit"</span>. Would you like to add a dedicated column?
+                    </p>
+<button type="button" class="mt-3 text-[10px] font-bold text-secondary uppercase tracking-widest underline underline-offset-4">Accept Suggestion</button>
+</div>
+</aside>
+</div>
+</main>
+</body>
+</html>

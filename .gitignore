@@ -1,0 +1,12 @@
+.env
+.env.local
+data/uploads/
+**/node_modules/
+**/__pycache__/
+*.pyc
+.DS_Store
+apps/web/dist/
+web/dist/
+
+# Supabase CLI local metadata (may include connection hints)
+supabase/.temp/
