@@ -27,11 +27,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let mounted = true
 
-    supabase.auth.getSession().then(({ data: { session: s } }) => {
-      if (!mounted) return
-      setSession(s)
-      setLoading(false)
-    })
+    void supabase.auth
+      .getSession()
+      .then(({ data: { session: s } }) => {
+        if (!mounted) return
+        setSession(s)
+        setLoading(false)
+      })
+      .catch((err: unknown) => {
+        console.error('[Savvy Legalis] getSession failed — check VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY on Vercel', err)
+        if (!mounted) return
+        setSession(null)
+        setLoading(false)
+      })
 
     const {
       data: { subscription },
