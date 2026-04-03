@@ -5,10 +5,21 @@ import '@/lib/supabase'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </StrictMode>,
-)
+const el = document.getElementById('root')
+if (!el) {
+  throw new Error('#root missing')
+}
+
+try {
+  const root = createRoot(el)
+  root.render(
+    <StrictMode>
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </StrictMode>,
+  )
+} catch (e) {
+  console.error(e)
+  el.textContent = `Savvy Legalis failed to start: ${e instanceof Error ? e.message : String(e)}`
+}

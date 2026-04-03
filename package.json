@@ -1,0 +1,10 @@
+{
+  "name": "savvy-legalis",
+  "private": true,
+  "scripts": {
+    "build": "cd web && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
