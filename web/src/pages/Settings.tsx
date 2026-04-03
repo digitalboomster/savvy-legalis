@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { useAuth } from '@/auth/AuthProvider'
-import { supabase } from '@/lib/supabase'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 
 export function Settings() {
   const { user } = useAuth()
@@ -14,6 +14,11 @@ export function Settings() {
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setError('Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel, then redeploy.')
+      setLoading(false)
+      return
+    }
     if (!user) return
     let cancelled = false
     void (async () => {

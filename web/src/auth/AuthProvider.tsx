@@ -9,7 +9,7 @@ import {
 } from 'react'
 import type { Session, User } from '@supabase/supabase-js'
 
-import { supabase } from '@/lib/supabase'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 
 type AuthContextValue = {
   session: Session | null
@@ -25,6 +25,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setSession(null)
+      setLoading(false)
+      return
+    }
+
     let mounted = true
 
     void supabase.auth
@@ -35,7 +41,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setLoading(false)
       })
       .catch((err: unknown) => {
-        console.error('[Savvy Legalis] getSession failed — check VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY on Vercel', err)
+        console.error('[Savvy Legalis] getSession failed — check Supabase env on Vercel', err)
         if (!mounted) return
         setSession(null)
         setLoading(false)
@@ -55,6 +61,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const signOut = useCallback(async () => {
+    if (!isSupabaseConfigured) return
     await supabase.auth.signOut()
   }, [])
 
