@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Shield } from 'lucide-react'
 
-import { useAuth } from '@/auth/AuthProvider'
-
 export function Landing() {
-  const { session, loading } = useAuth()
-  const enterTo = loading ? '/login' : session ? '/dashboard' : '/login'
-
   return (
     <div className="min-h-screen bg-canvas bg-hero-mesh">
       <header className="flex items-center justify-between px-8 py-6 md:px-14">
@@ -17,7 +12,7 @@ export function Landing() {
           </span>
         </div>
         <Link
-          to={enterTo}
+          to="/dashboard"
           className="rounded-full border border-border bg-elevated/80 px-5 py-2.5 font-sans text-sm font-semibold text-ink backdrop-blur transition hover:border-primary/40 hover:bg-elevated"
         >
           Enter platform →
@@ -37,7 +32,7 @@ export function Landing() {
         </p>
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           <Link
-            to={enterTo}
+            to="/dashboard"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-10 py-4 font-sans text-sm font-bold tracking-wide text-white shadow-lift transition hover:bg-primary-bright"
           >
             Enter Savvy Legalis

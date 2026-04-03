@@ -1,7 +1,4 @@
 import { Link, NavLink, Outlet } from 'react-router-dom'
-
-import { useAuth } from '@/auth/AuthProvider'
-import { userDisplayLabel, userInitials } from '@/lib/utils'
 import {
   LayoutDashboard,
   Scale,
@@ -29,8 +26,6 @@ const bottom = [
 ] as const
 
 export function Shell() {
-  const { user, signOut } = useAuth()
-
   return (
     <div className="flex min-h-screen bg-canvas">
       <aside className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-border bg-surface/95 backdrop-blur-xl">
@@ -90,26 +85,15 @@ export function Shell() {
             <span className="font-label text-[11px] uppercase tracking-widest">Workspace</span>
           </div>
           <div className="flex items-center gap-3">
-            {user ? (
-              <>
-                <span className="hidden max-w-[200px] truncate font-sans text-sm text-mist sm:inline" title={userDisplayLabel(user)}>
-                  {userDisplayLabel(user)}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => void signOut()}
-                  className="rounded-full border border-border bg-elevated/80 px-4 py-2 font-sans text-xs font-semibold text-ink transition hover:border-primary/40 hover:bg-elevated"
-                >
-                  Sign out
-                </button>
-                <div
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-primary-dim font-label text-xs font-bold text-ink"
-                  title={userDisplayLabel(user)}
-                >
-                  {userInitials(user)}
-                </div>
-              </>
-            ) : null}
+            <span className="hidden max-w-[200px] truncate font-sans text-sm text-mist sm:inline" title="Demo workspace">
+              Demo workspace
+            </span>
+            <div
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-primary-dim font-label text-xs font-bold text-ink"
+              title="Workspace"
+            >
+              SL
+            </div>
           </div>
         </header>
         <main className="flex-1 scroll-slim overflow-auto p-8">

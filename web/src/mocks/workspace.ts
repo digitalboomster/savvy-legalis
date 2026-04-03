@@ -592,6 +592,12 @@ export const mockPlaybooks: MockPlaybookItem[] = [
   { id: 'p4', label: 'Service / hearing date compliance', ok: true },
 ]
 
+/** Demo settings form (no auth / no API). */
+export const mockSettingsDefaults = {
+  firmName: 'My firm',
+  fullName: 'Demo Counsel',
+} as const
+
 export const mockSupportTickets = [
   { id: 't1', subject: 'Bulk upload stalled at 400MB PDF', status: 'In progress', sla: '4h' },
   { id: 't2', subject: 'Add Sharia corpus to workspace', status: 'Queued', sla: '24h' },
